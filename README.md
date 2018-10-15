@@ -1,3 +1,56 @@
+1 - add alerts to both buttons with onClick event
+
+    <button onClick={alert('increase')} className="btn btn-success">+</button>
+            <p className="inline">0</p>
+    <button onClick={alert('decrease')} className="btn btn-danger">-</button>
+
+2 - fix the onClick
+
+    <button onClick={() => alert('increase')} className="btn btn-success">+</button>
+            <p className="inline">{this.state.number}</p>
+    <button onClick={() => alert('decrease')} className="btn btn-danger">-</button>
+
+3 - create two functions for the increase and decrease and change the onClick events
+
+    increase = () => {
+      alert('increase')
+    }
+
+    decrease = () => {
+      alert('decrease')
+    }
+
+    ...
+
+    <button onClick={this.increase} className="btn btn-success">+</button>
+        <p className="inline">{this.state.number}</p>
+    <button onClick={this.decrease} className="btn btn-danger">-</button>
+
+4 - create a constructor with the number state
+
+    constructor(props){
+      super(props)
+      this.state = {number : 0}
+    }
+
+5 - change the number in the p tag to the state number
+    
+    ...
+    <p className="inline">{this.state.number}</p>
+    ...
+
+6 - change the state in the functions
+
+      increase = () => {
+      this.setState({number : this.state.number+1})
+    }
+
+    decrease = () => {
+      this.setState({number : this.state.number-1})
+    }
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
