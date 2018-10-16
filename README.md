@@ -18,17 +18,17 @@
 
 ```javascript
 increase() {
-  alert('increase')
+  alert('increase');
 }
 
 decrease() {
-  alert('decrease')
+  alert('decrease');
 }
 
 ...
 
 <button onClick={this.increase} className="btn btn-success">+</button>
-    <p className="inline">0</p>
+<p className="inline">0</p>
 <button onClick={this.decrease} className="btn btn-danger">-</button>
 ```
 
