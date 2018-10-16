@@ -2,7 +2,7 @@
 
 ```javascript
 <button onClick={alert('increase')} className="btn btn-success">+</button>
-        <p className="inline">0</p>
+<p className="inline">0</p>
 <button onClick={alert('decrease')} className="btn btn-danger">-</button>
 ```
 
@@ -10,7 +10,7 @@
 
 ```javascript
 <button onClick={() => alert('increase')} className="btn btn-success">+</button>
-        <p className="inline">{this.state.number}</p>
+<p className="inline">0</p>
 <button onClick={() => alert('decrease')} className="btn btn-danger">-</button>
 ```
 
@@ -28,7 +28,7 @@ decrease() {
 ...
 
 <button onClick={this.increase} className="btn btn-success">+</button>
-    <p className="inline">{this.state.number}</p>
+    <p className="inline">0</p>
 <button onClick={this.decrease} className="btn btn-danger">-</button>
 ```
 
@@ -37,7 +37,7 @@ decrease() {
 ```javascript
 constructor(props){
   super(props)
-  this.state = {number : 0}
+  this.state = { number : 0 }
 }
 ```
 
@@ -51,11 +51,13 @@ constructor(props){
 
 ```javascript
 increase() {
-  this.setState({number : this.state.number+1})
+  const newNumber = this.state.number++;
+  this.setState({ number: newNumber })
 }
 
 decrease() {
-  this.setState({number : this.state.number-1})
+  const newNumber = this.state.number--
+  this.setState({ number: newNumber })
 }
 ```
 
