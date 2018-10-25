@@ -1,4 +1,4 @@
-presentation : https://drive.google.com/open?id=1sVGFKDgr3Kd138my5XHJuJfwJMAuWPgH
+presentation : https://docs.google.com/presentation/d/1XD1QxGNfEP_BmNRlHPyP2h5WTj6gi4ql0WemniTw4vY
 
 1. add alerts to both buttons with onClick event
 
