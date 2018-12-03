@@ -53,12 +53,12 @@ constructor(props){
 
 ```javascript
 increase() {
-  const newNumber = this.state.number++;
+  const newNumber = this.state.number + 1;
   this.setState({ number: newNumber })
 }
 
 decrease() {
-  const newNumber = this.state.number--
+  const newNumber = this.state.number - 1;
   this.setState({ number: newNumber })
 }
 ```
