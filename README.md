@@ -16,7 +16,7 @@ presentation : https://docs.google.com/presentation/d/1XD1QxGNfEP_BmNRlHPyP2h5WT
 <button onClick={() => alert('decrease')} className="btn btn-danger">-</button>
 ```
 
-3. create two functions for the increase and decrease and change the onClick events
+3. create two methods for the increase and decrease and change the onClick events
 
 ```javascript
 increase = () => alert('increase');
@@ -33,7 +33,7 @@ decrease = () => alert('decrease');
 4. add a `state` with the number
 
 ```javascript
-state = { number : 0 }
+state = { number: 0 };
 ```
 
 5. change the number in the p tag to the state number
@@ -47,11 +47,11 @@ state = { number : 0 }
 ```javascript
 increase = () => {
   const newNumber = this.state.number + 1;
-  this.setState({ number: newNumber })
-}
+  this.setState({ number: newNumber });
+};
 
 decrease = () => {
   const newNumber = this.state.number - 1;
-  this.setState({ number: newNumber })
-}
+  this.setState({ number: newNumber });
+};
 ```
