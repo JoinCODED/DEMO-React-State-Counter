@@ -19,13 +19,9 @@ presentation : https://docs.google.com/presentation/d/1XD1QxGNfEP_BmNRlHPyP2h5WT
 3. create two functions for the increase and decrease and change the onClick events
 
 ```javascript
-increase() {
-  alert('increase');
-}
+increase = () => alert('increase');
 
-decrease() {
-  alert('decrease');
-}
+decrease = () => alert('decrease');
 
 ...
 
@@ -34,13 +30,10 @@ decrease() {
 <button onClick={this.decrease} className="btn btn-danger">-</button>
 ```
 
-4. create a constructor with the number state
+4. add a `state` with the number
 
 ```javascript
-constructor(props){
-  super(props)
-  this.state = { number : 0 }
-}
+state = { number : 0 }
 ```
 
 5. change the number in the p tag to the state number
@@ -52,23 +45,13 @@ constructor(props){
 6. change the state in the functions
 
 ```javascript
-increase() {
+increase = () => {
   const newNumber = this.state.number + 1;
   this.setState({ number: newNumber })
 }
 
-decrease() {
+decrease = () => {
   const newNumber = this.state.number - 1;
   this.setState({ number: newNumber })
-}
-```
-
-7. bind the methods in the constructor
-
-```javascript
-constructor(props) {
-  ...
-  this.increase = this.increase.bind(this);
-  this.decrease = this.decrease.bind(this);
 }
 ```
