@@ -2,20 +2,14 @@ import React from "react";
 import "./App.css";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { number: 0 };
+  state = { number: 0 };
 
-    this.increase = this.increase.bind(this);
-    this.decrease = this.decrease.bind(this);
-  }
-
-  increase() {
+  increase = () => {
     const newNumber = this.state.number + 1;
     this.setState({ number: newNumber });
   }
 
-  decrease() {
+  decrease = () => {
     const newNumber = this.state.number - 1;
     this.setState({ number: newNumber });
   }
