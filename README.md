@@ -40,7 +40,7 @@ increase = name => alert(`hello ${name}`);
 </button>;
 ```
 
-4. Put function call inside arrow function
+5. Put function call inside arrow function
 
 ```javascript
 increase = name => alert(`hello ${name}`);
@@ -50,9 +50,9 @@ increase = name => alert(`hello ${name}`);
 </button>;
 ```
 
-4. Introduce Class-Based components & convert `App.js` into a class-based component
+6. Introduce Class-Based components & convert `App.js` into a class-based component
 
-5. Import `{Component}` & add render method
+7. Import `{Component}` & add render method
 
 ```javascript
 import React, { Component } from "react";
@@ -68,19 +68,19 @@ class App extends Component {
 export default App;
 ```
 
-4. Add a `state` with the number
+8. Add a `state` with the number
 
 ```javascript
 state = { number: 0 };
 ```
 
-5. Change the number in the p tag to the state number
+9. Change the number in the p tag to the state number
 
 ```javascript
 <p className="inline">{this.state.number}</p>
 ```
 
-6. Change the state in the functions
+10. Change the state in the functions
 
 ```javascript
 increase = () => {
