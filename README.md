@@ -30,6 +30,26 @@ decrease = () => alert('decrease');
 <button onClick={this.decrease} className="btn btn-danger">-</button>
 ```
 
+4. Send an argument to the increase method
+
+```javascript
+increase = name => alert(`hello ${name}`);
+
+<button onClick={this.increase("Lailz")} className="btn btn-success">
+  +
+</button>;
+```
+
+4. Put function call inside arrow function
+
+```javascript
+increase = name => alert(`hello ${name}`);
+
+<button onClick={() => this.increase("Lailz")} className="btn btn-success">
+  +
+</button>;
+```
+
 4. Introduce Class-Based components & convert `App.js` into a class-based component
 
 5. Import `{Component}` & add render method
