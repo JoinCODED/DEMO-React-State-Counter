@@ -132,3 +132,38 @@ decrease = () => {
   this.setState({ number: newNumber });
 };
 ```
+
+11. Refactor into a single method:
+
+```javascript
+changeNumber = step => {
+  const newNumber = this.state.number + step;
+  this.setState({ number: newNumber });
+};
+```
+
+12. Discuss how to pass arguments to event handlers:
+
+This won't work, it will run the function immediately:
+
+```javascript
+<button className="btn btn-success" onClick={this.changeNumber(1)}>
+  +
+</button>
+<p className="inline">{this.state.number}</p>
+<button className="btn btn-danger" onClick={this.changeNumber(-1)}>
+  -
+</button>
+```
+
+Wrap the call to `this.changeNumber` in an anonymous function:
+
+```javascript
+<button className="btn btn-success" onClick={() => this.changeNumber(1)}>
+  +
+</button>
+<p className="inline">{this.state.number}</p>
+<button className="btn btn-danger" onClick={() => this.changeNumber(-1)}>
+  -
+</button>
+```
