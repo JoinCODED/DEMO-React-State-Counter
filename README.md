@@ -16,7 +16,7 @@ presentation : https://docs.google.com/presentation/d/1XD1QxGNfEP_BmNRlHPyP2h5WT
 <button onClick={() => alert('decrease')} className="btn btn-danger">-</button>
 ```
 
-3. Create two functions for the increase and decrease and change the `onClick` events
+3. Create two functions for the increase and decrease and pass them to the `onClick` events:
 
 ```javascript
 const increase = () => alert('increase');
@@ -82,18 +82,19 @@ export default App;
 ```
 
 7. Convert the `number` variable into a `state` property.
+   Change the number in the `p` tag to the state number.
+   Show the state in the Dev Tools.
+   Show that it can be modified in the dev tools and it will affect the app!
 
 ```javascript
 state = { number: 0 };
-```
 
-8. Change the number in the `p` tag to the state number
+...
 
-```javascript
 <p className="inline">{this.state.number}</p>
 ```
 
-9. Convert the functions into methods.
+8. Convert the functions into methods.
    Change the state **manually** in the functions.
    Show that this **is** updating `state` but it doesn't work because there is no rerender.
    Show the warning in the console about manually updating state.
@@ -119,7 +120,7 @@ decrease = () => {
   ...
 ```
 
-10. Introduce `setState` the secret sauce of react!
+9. Introduce `setState` the secret sauce of react!
 
 ```javascript
 increase = () => {
@@ -133,7 +134,7 @@ decrease = () => {
 };
 ```
 
-11. Refactor into a single method:
+10. Refactor into a single method:
 
 ```javascript
 changeNumber = step => {
