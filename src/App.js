@@ -4,24 +4,25 @@ import "./App.css";
 class App extends Component {
   state = { number: 0 };
 
-  increase = () => {
-    const newNumber = this.state.number + 1;
+  changeNumber = step => {
+    const newNumber = this.state.number + step;
     this.setState({ number: newNumber });
-  }
-
-  decrease = () => {
-    const newNumber = this.state.number - 1;
-    this.setState({ number: newNumber });
-  }
+  };
 
   render() {
     return (
       <div className="App">
-        <button onClick={this.increase} className="btn btn-success">
+        <button
+          onClick={() => this.changeNumber(1)}
+          className="btn btn-success"
+        >
           +
         </button>
         <p className="inline">{this.state.number}</p>
-        <button onClick={this.decrease} className="btn btn-danger">
+        <button
+          onClick={() => this.changeNumber(-1)}
+          className="btn btn-danger"
+        >
           -
         </button>
       </div>
