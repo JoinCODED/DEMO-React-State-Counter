@@ -62,97 +62,95 @@ presentation : https://docs.google.com/presentation/d/1XD1QxGNfEP_BmNRlHPyP2h5WT
    );
    ```
 
-5. Introduce the concept of Class-Based components.
 
-6. Convert `App.js` into a class-based component.
-   Import `{Component}` and add render method.
+5. Import `useState` in `App.js`.
+   
+   
 
    ```jsx
-   import React, { Component } from "react";
+   import React, { useState } from "react";
 
-   class App extends Component {
-     render() {
+   function App() {
        return (
          ...
        )
-     }
    }
 
    export default App;
    ```
 
-7. Convert the `number` variable into a `state` property.
+6. Convert the `number` variable into a `state` property.
    Change the number in the `p` tag to the state number.
    Show the state in the Dev Tools.
    Show that it can be modified in the dev tools and it will affect the app!
 
    ```jsx
-   state = { number: 0 };
+   const [number,setNumber] = useState(0)
 
    ...
 
-   <p className="inline">{this.state.number}</p>
+   <p className="inline">{number}</p>
    ```
 
-8. Convert the functions into methods.
+7. Convert the functions into methods.
    Change the state **manually** in the functions.
    Show that this **is** updating `state` but it doesn't work because there is no rerender.
    Show the warning in the console about manually updating state.
 
    ```jsx
-   increase = () => {
-     this.state.number++;
-     console.log(this.state.number);
+   const increase = () => {
+     number++;
+     console.log(number);
    };
 
-   decrease = () => {
-     this.state.number--;
-     console.log(this.state.number);
+   const decrease = () => {
+     number--;
+     console.log(number);
    };
    ...
-       <button className="btn btn-success" onClick={this.increase}>
+       <button className="btn btn-success" onClick={increase}>
          +
        </button>
-       <p className="inline">{this.state.number}</p>
-       <button className="btn btn-danger" onClick={this.decrease}>
+       <p className="inline">{number}</p>
+       <button className="btn btn-danger" onClick={decrease}>
          -
        </button>
      ...
    ```
 
-9. Introduce `setState` the secret sauce of react!
+8. Introduce `setNumber`!
 
    ```jsx
-   increase = () => {
-     const newNumber = this.state.number + 1;
-     this.setState({ number: newNumber });
+   const increase = () => {
+     const newNumber = number + 1;
+     setNumber(newNumber);
    };
 
-   decrease = () => {
-     const newNumber = this.state.number - 1;
-     this.setState({ number: newNumber });
-   };
+    const decrease = () => {
+     const newNumber = number - 1;
+     setNumber(newNumber);
+    };
    ```
 
-10. Refactor into a single method:
+9.  Refactor into a single method:
 
     ```jsx
-    changeNumber = step => {
-      const newNumber = this.state.number + step;
-      this.setState({ number: newNumber });
+    const changeNumber = step => {
+      const newNumber = number + step;
+      setNumber(newNumber)
     };
     ```
 
-11. Discuss how to pass arguments to event handlers:
+10. Discuss how to pass arguments to event handlers:
 
     This won't work, it will run the function immediately:
 
     ```jsx
-    <button className="btn btn-success" onClick={this.changeNumber(1)}>
+    <button className="btn btn-success" onClick={changeNumber(1)}>
       +
     </button>
-    <p className="inline">{this.state.number}</p>
-    <button className="btn btn-danger" onClick={this.changeNumber(-1)}>
+    <p className="inline">{number}</p>
+    <button className="btn btn-danger" onClick={changeNumber(-1)}>
       -
     </button>
     ```
@@ -160,11 +158,11 @@ presentation : https://docs.google.com/presentation/d/1XD1QxGNfEP_BmNRlHPyP2h5WT
     Wrap the call to `this.changeNumber` in an anonymous function:
 
     ```jsx
-    <button className="btn btn-success" onClick={() => this.changeNumber(1)}>
+    <button className="btn btn-success" onClick={() => changeNumber(1)}>
       +
     </button>
-    <p className="inline">{this.state.number}</p>
-    <button className="btn btn-danger" onClick={() => this.changeNumber(-1)}>
+    <p className="inline">{number}</p>
+    <button className="btn btn-danger" onClick={() => changeNumber(-1)}>
       -
     </button>
     ```
